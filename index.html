@@ -1,237 +1,1672 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--💡UPDATE: Change the title to your name-->
-    <title>Francis M'BRA </title>
-      
-    <!--💡UPDATE: Add your favicon here. You can generate one at realfavicongenerator.net-->
+    <title>Francis M'BRA - Data Analyst</title>
     <link rel="icon" type="image/png" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="/favicon-32x32.png">
-    
-    <!-- Google Fonts for Elegant Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-    <!-- Your Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --primary-light: #38bdf8;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --dark-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: rgba(148, 163, 184, 0.1);
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section - Premium Design */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.12) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            color: var(--primary-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-label .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--primary-light), var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--dark-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: var(--primary);
+        }
+
+        .social-proof {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-light);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Navigation - Professional */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--text-primary);
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 7rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+            color: var(--primary-light);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-card {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            position: sticky;
+            top: 100px;
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            border-radius: 16px;
+            border: 3px solid var(--border);
+        }
+
+        .profile-status {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: var(--dark);
+            border: 2px solid var(--success);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+        }
+
+        .profile-info h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-role {
+            color: var(--primary-light);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .about-content p {
+            font-size: 1.0625rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 30px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), transparent);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--dark);
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 0 6px rgba(14, 165, 233, 0.1);
+        }
+
+        .timeline-card {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .timeline-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-company {
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+
+        .timeline-period {
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            color: var(--primary-light);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .timeline-tasks {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .timeline-tasks li {
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .timeline-tasks li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(14, 165, 233, 0.08);
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            color: var(--primary-light);
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+        }
+
+        /* Education Grid */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .education-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .education-header {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .education-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.75rem;
+            flex-shrink: 0;
+        }
+
+        .education-header h3 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .degree-item {
+            padding: 1.5rem;
+            background: rgba(14, 165, 233, 0.05);
+            border: 1px solid rgba(14, 165, 233, 0.1);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .degree-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .degree-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .degree-school {
+            color: var(--primary-light);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .degree-year {
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.15);
+            color: var(--primary-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .degree-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .degree-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .degree-tag {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem;
+            background: rgba(14, 165, 233, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            background: rgba(14, 165, 233, 0.08);
+            border-color: var(--primary);
+        }
+
+        .cert-badge {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(6, 182, 212, 0.2));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-light);
+            font-size: 1.25rem;
+        }
+
+        .cert-info h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .cert-provider {
+            color: var(--text-muted);
+            font-size: 0.8125rem;
+        }
+
+        .cert-status {
+            margin-left: auto;
+            padding: 0.4rem 1rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .cert-status.active {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+        }
+
+        .cert-status.progress {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--warning);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 50px rgba(14, 165, 233, 0.2);
+        }
+
+        .project-image {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(6, 182, 212, 0.1));
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            color: var(--primary-light);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            border: 1px solid rgba(14, 165, 233, 0.3);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .project-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+        }
+
+        .project-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .project-btn-secondary {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--primary-light);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+        }
+
+        .project-btn-secondary:hover {
+            background: rgba(14, 165, 233, 0.2);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--primary);
+        }
+
+        .skill-category-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skill-category-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .skill-category-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-category-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9375rem;
+        }
+
+        .skill-items {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            padding: 1.5rem;
+            background: rgba(14, 165, 233, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(14, 165, 233, 0.08);
+            border-color: var(--primary);
+        }
+
+        .skill-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            font-size: 1.0625rem;
+        }
+
+        .skill-level {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 0.35rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.9375rem;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.0625rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            font-size: 0.9375rem;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: rgba(14, 165, 233, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(14, 165, 233, 0.08);
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.0625rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(14, 165, 233, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 90vh;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- HEADER SECTION -->
-<header>
-    <div class="container">
-        <!--💡UPDATE: Change to your name and title-->
-        <h1>Francis M'BRA</h1>
-        <p>Data Analyst | Developpeur Power BI | Chargé d'études statistiques</p>
-        <div class="social-links">
-            <!--💡UPDATE: Add your social media links and CV file-->
-            <a href="francis-enock-m-bra-78b4a112b/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="[YOUR_GITHUB_URL]" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="[YOUR_YOUTUBE_URL]" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="assets/Fancis_M'BRA_CV.pdf" download title="Download CV"><i class="fas fa-file-arrow-down"></i></a>
-        </div>
-    </div>
-</header>
-
-<!-- NAVIGATION -->
+<!-- Navigation -->
 <nav>
     <div class="container">
+        <div class="nav-logo">FM</div>
         <ul>
-            <li><a href="#A propos">A propos</a></li>
-            <li><a href="#Projects">Projects</a></li>
-            <li><a href="#Competences">Compétences</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#experience">Expérience</a></li>
+            <li><a href="#education">Formation</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 </nav>
 
-<!-- ABOUT SECTION -->
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-label">
+                <span class="dot"></span>
+                Disponible pour de nouveaux projets
+            </div>
+            <h1>
+                Bonjour, je suis<br>
+                <span class="gradient-text">Francis M'BRA</span>
+            </h1>
+            <p class="hero-description">
+                Data Analyst spécialisé dans la transformation de données complexes en insights stratégiques. 
+                Expert Power BI, SQL et R avec une expérience confirmée dans le retail, RH et la recherche scientifique.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Me contacter
+                </a>
+                <a href="assets/Fancis_M'BRA_CV.pdf" download class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Télécharger CV
+                </a>
+            </div>
+            <div class="social-proof">
+                <div class="stat-item">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Années d'expérience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Projets réalisés</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
 <section id="about" class="section">
     <div class="container">
-        <h2>A propos de moi</h2>
-        <div class="about-content">
-            <!--💡UPDATE: Change the image to your own profile photo in assets/images/-->
-            <img src="assets/images/Photo_Francis.jpg" alt="Francis" class="profile-photo">
-            <div class="about-text">
-                <!--💡UPDATE: Write your own 'About Me' text here-->
-                <p>Je suis data analyst diplômé d’un Master 2 en Data analyse et en démographie, avec une forte appétence pour la transformation de données complexes en indicateurs clairs, stratégiques et immédiatement exploitables à l’aide d’outils tels que Power bi, SQL, R, Python. J’interviens à toutes les étapes du cycle de la donnée, de la collecte au reporting décisionnel.</p>
-                <p>Mon parcours m’a permis d’évoluer dans des environnements variés, allant de l’analyse commerciale et du pricing chez METRO, au reporting RH et à l’optimisation de la performance opérationnelle chez Domino’s Pizza, sans oublier la recherche scientifique à l’INSERM sur des problématiques de santé publique.</p>
-                <p>Aujourd’hui, je renforce également mon profil avec des compétences en automatisation des processus data (n8n, Power Automate), avec un objectif clair : faire parler les données pour piloter efficacement votre stratégie.</p>
+        <div class="section-header">
+            <div class="section-label">Introduction</div>
+            <h2 class="section-title">À propos de moi</h2>
+        </div>
+        <div class="about-grid">
+            <div class="profile-card">
+                <div class="profile-image-wrapper">
+                    <img src="assets/images/Photo_Francis.jpg" alt="Francis M'BRA" class="profile-image">
+                    <div class="profile-status">
+                        <span class="status-dot"></span>
+                        Disponible
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h3>Francis M'BRA</h3>
+                    <p class="profile-role">Data Analyst</p>
+                    <div class="profile-links">
+                        <a href="https://www.linkedin.com/in/francis-enock-m-bra-78b4a112b/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="mailto:mbrenock01@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="about-content">
+                <p>Je suis data analyst diplômé d'un Master 2 en Data analyse et en démographie, avec une forte appétence pour la transformation de données complexes en indicateurs clairs, stratégiques et immédiatement exploitables à l'aide d'outils tels que Power BI, SQL, R, Python. J'interviens à toutes les étapes du cycle de la donnée, de la collecte au reporting décisionnel.</p>
+                
+                <p>Mon parcours m'a permis d'évoluer dans des environnements variés, allant de l'analyse commerciale et du pricing chez METRO, au reporting RH et à l'optimisation de la performance opérationnelle chez Domino's Pizza, sans oublier la recherche scientifique à l'INSERM sur des problématiques de santé publique.</p>
+                
+                <p>Aujourd'hui, je renforce également mon profil avec des compétences en automatisation des processus data (n8n, Power Automate), avec un objectif clair : faire parler les données pour piloter efficacement votre stratégie.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS SECTION -->
+<!-- Experience Section -->
+<section id="experience" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Parcours professionnel</div>
+            <h2 class="section-title">Expérience</h2>
+            <p class="section-description">Mon parcours dans l'analyse de données à travers différents secteurs</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Data Analyst - Chargé d'études RH</h3>
+                            <div class="timeline-company">Domino's Pizza France</div>
+                        </div>
+                        <div class="timeline-period">2023 - 2024</div>
+                    </div>
+                    <ul class="timeline-tasks">
+                        <li>Conception et automatisation de dashboards RH sur Power BI pour le suivi du turnover, absentéisme et performance</li>
+                        <li>Optimisation des processus de reporting avec Power Query et DAX</li>
+                        <li>Analyse prédictive des effectifs et modélisation des besoins en recrutement</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">DAX</span>
+                        <span class="tech-tag">Excel VBA</span>
+                        <span class="tech-tag">Power Query</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Data Analyst Commercial</h3>
+                            <div class="timeline-company">METRO France</div>
+                        </div>
+                        <div class="timeline-period">2022 - 2023</div>
+                    </div>
+                    <ul class="timeline-tasks">
+                        <li>Analyse des performances commerciales et pricing par segmentation client</li>
+                        <li>Développement de KPIs stratégiques pour le pilotage des ventes</li>
+                        <li>Création de tableaux de bord interactifs avec Power BI Desktop</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Pricing Analytics</span>
+                        <span class="tech-tag">Excel</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div>
+                            <h3 class="timeline-title">Chargé d'études statistiques</h3>
+                            <div class="timeline-company">INSERM</div>
+                        </div>
+                        <div class="timeline-period">2021 - 2022</div>
+                    </div>
+                    <ul class="timeline-tasks">
+                        <li>Analyse statistique de cohortes sur des problématiques de santé publique</li>
+                        <li>Modélisation statistique avec R (régression, tests d'hypothèses, ANOVA)</li>
+                        <li>Visualisation de données complexes avec RShiny et ggplot2</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag">R</span>
+                        <span class="tech-tag">SAS</span>
+                        <span class="tech-tag">RShiny</span>
+                        <span class="tech-tag">ggplot2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Parcours académique</div>
+            <h2 class="section-title">Formation & Certifications</h2>
+        </div>
+        <div class="education-grid">
+            <div class="education-card">
+                <div class="education-header">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h3>Diplômes</h3>
+                    </div>
+                </div>
+                <div class="degree-item">
+                    <h4 class="degree-title">Master 2 Data Analyse et Démographie</h4>
+                    <div class="degree-school">Université / École Supérieure</div>
+                    <span class="degree-year">2020 - 2022</span>
+                    <p class="degree-description">Spécialisation en analyse de données quantitatives, modélisation statistique, démographie et sciences sociales. Projets de recherche sur l'analyse de cohortes et la visualisation de données complexes.</p>
+                    <div class="degree-tags">
+                        <span class="degree-tag">Statistiques avancées</span>
+                        <span class="degree-tag">R & SAS</span>
+                        <span class="degree-tag">Démographie</span>
+                    </div>
+                </div>
+                <div class="degree-item">
+                    <h4 class="degree-title">Licence Sciences Économiques et Gestion</h4>
+                    <div class="degree-school">Université / École</div>
+                    <span class="degree-year">2017 - 2020</span>
+                    <p class="degree-description">Formation en économie, statistiques, économétrie et gestion d'entreprise. Bases solides en mathématiques appliquées et analyse quantitative.</p>
+                    <div class="degree-tags">
+                        <span class="degree-tag">Économétrie</span>
+                        <span class="degree-tag">Statistiques</span>
+                        <span class="degree-tag">Excel</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <div class="education-header">
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div>
+                        <h3>Certifications</h3>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Microsoft Power BI Data Analyst (PL-300)</h4>
+                        <div class="cert-provider">Microsoft</div>
+                    </div>
+                    <span class="cert-status active">Certifié</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>SQL pour l'analyse de données</h4>
+                        <div class="cert-provider">Coursera / DataCamp</div>
+                    </div>
+                    <span class="cert-status active">Certifié</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Data Analysis with R</h4>
+                        <div class="cert-provider">Coursera</div>
+                    </div>
+                    <span class="cert-status active">Certifié</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Tableau Desktop Specialist</h4>
+                        <div class="cert-provider">Tableau</div>
+                    </div>
+                    <span class="cert-status progress">En cours</span>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-badge">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Google Data Analytics Professional</h4>
+                        <div class="cert-provider">Google / Coursera</div>
+                    </div>
+                    <span class="cert-status progress">En cours</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
 <section id="projects" class="section">
     <div class="container">
-        <h2>Mes Projets</h2>
+        <div class="section-header">
+            <div class="section-label">Portfolio</div>
+            <h2 class="section-title">Projets Data</h2>
+            <p class="section-description">Une sélection de mes projets d'analyse de données et de visualisation</p>
+        </div>
         <div class="projects-grid">
-
-            <!--💡UPDATE: Replace this with your own project. Add as many as you like!-->
-            <!-- Projet 1 -->
-             <div class="project-card">
-                <!--💡UPDATE: Add a preview image of your project to assets/images/ -->
-                <img src="assets/images/project-placeholder-1.jpg" alt="Project One Preview">
-                <div class="project-card-content">
-                    <h3>Project Title One</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
-                    <div class="project-buttons">
-                        <!--💡UPDATE: Add link to your project's code/documentation on GitHub-->
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <!--💡UPDATE: Add link to your live dashboard (e.g., Power BI, Tableau Public)-->
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">Voir le rapport</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Projet 2 -->
             <div class="project-card">
-                <img src="assets/images/project-placeholder-2.jpg" alt="Project Two Preview">
-                <div class="project-card-content">
-                    <h3>Project Title Two</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
-                    <div class="project-buttons">
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">Voir le rapport</a>
+                <div class="project-image">
+                    <img src="assets/images/project-placeholder-1.jpg" alt="Analyse METRO">
+                    <div class="project-tag">Power BI</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Analyse des Ventes METRO</h3>
+                    <p class="project-description">Tableau de bord Power BI permettant le suivi des performances commerciales et l'analyse du pricing. Inclut des KPIs dynamiques et des analyses prédictives.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-btn project-btn-primary">
+                            <i class="fab fa-github"></i> Documentation
+                        </a>
+                        <a href="#" class="project-btn project-btn-secondary">
+                            <i class="fas fa-external-link-alt"></i> Voir le rapport
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Projet 3 -->
             <div class="project-card">
-                <img src="assets/images/project-placeholder-3.jpg" alt="Project Three Preview">
-                <div class="project-card-content">
-                    <h3>Project Title Three</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
-                    <div class="project-buttons">
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">Voir le rapport</a>
+                <div class="project-image">
+                    <img src="assets/images/project-placeholder-2.jpg" alt="Dashboard RH">
+                    <div class="project-tag">RH Analytics</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Dashboard RH Domino's</h3>
+                    <p class="project-description">Automatisation du reporting RH avec Power BI et Excel. Suivi du turnover, absentéisme et performance opérationnelle des équipes.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-btn project-btn-primary">
+                            <i class="fab fa-github"></i> Documentation
+                        </a>
+                        <a href="#" class="project-btn project-btn-secondary">
+                            <i class="fas fa-external-link-alt"></i> Voir le rapport
+                        </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Projet 4 -->
             <div class="project-card">
-                <img src="assets/images/project-placeholder-4.jpg" alt="Project Four Preview">
-                <div class="project-card-content">
-                    <h3>Project Title Four</h3>
-                    <p>A brief, one or two-sentence description of your project, what it does, and the tools you used.</p>
-                    <div class="project-buttons">
-                        <a href="[YOUR_GITHUB_PROJECT_URL]" target="_blank" class="btn">Documentation</a>
-                        <a href="[YOUR_LIVE_DASHBOARD_URL]" target="_blank" class="btn btn-secondary">Voir le rapport</a>
+                <div class="project-image">
+                    <img src="assets/images/project-placeholder-3.jpg" alt="Étude INSERM">
+                    <div class="project-tag">R / SAS</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Étude Santé Publique INSERM</h3>
+                    <p class="project-description">Analyse statistique avec R et SAS sur des données de santé publique. Visualisations RShiny pour faciliter l'interprétation des résultats.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-btn project-btn-primary">
+                            <i class="fab fa-github"></i> Documentation
+                        </a>
+                        <a href="#" class="project-btn project-btn-secondary">
+                            <i class="fas fa-external-link-alt"></i> Voir le rapport
+                        </a>
                     </div>
                 </div>
             </div>
 
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project-placeholder-4.jpg" alt="Automatisation ETL">
+                    <div class="project-tag">ETL</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Automatisation ETL</h3>
+                    <p class="project-description">Pipeline de données automatisé avec Power Query et n8n. Collecte, transformation et chargement de données multi-sources vers Power BI.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-btn project-btn-primary">
+                            <i class="fab fa-github"></i> Documentation
+                        </a>
+                        <a href="#" class="project-btn project-btn-secondary">
+                            <i class="fas fa-external-link-alt"></i> Voir le rapport
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- SKILLS SECTION -->
-<section id="compétences" class="section">
+<!-- Skills Section -->
+<section id="skills" class="section">
     <div class="container">
-        <h2>Compétences techniques</h2>
-        <div class="skills-table">
-            
-            <!--💡UPDATE: Customize your skills in each category-->
-            <!-- Column 1: Data Visualization -->
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>Data Visualisation</h3>
+        <div class="section-header">
+            <div class="section-label">Expertise</div>
+            <h2 class="section-title">Compétences Techniques</h2>
+            <p class="section-description">Un aperçu détaillé de mes compétences techniques en analyse de données</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3 class="skill-category-title">Business Intelligence & Visualisation</h3>
+                        <p class="skill-category-subtitle">Transformation de données en insights visuels</p>
+                    </div>
                 </div>
-                <ul class="skill-list">
-                    <li>Power BI</li>
-                    <li>Tableau</li>
-                    <li>RShiny</li>
-                    <li>Excel Dashboards</li>
-                </ul>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">Power BI</div>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <p class="skill-description">Conception de tableaux de bord interactifs avec DAX avancé (Time Intelligence, Calculate, Filter Context). Modélisation en étoile/flocon, optimisation des performances, Row-Level Security. Utilisé chez METRO et Domino's pour le reporting décisionnel.</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">Tableau Desktop</div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </div>
+                        <p class="skill-description">Création de visualisations dynamiques, calculs de table, paramètres et actions. Maîtrise des best practices en data storytelling.</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">RShiny</div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </div>
+                        <p class="skill-description">Développement d'applications web interactives pour la visualisation de données statistiques à l'INSERM. Utilisation de ggplot2, plotly et DT pour des dashboards scientifiques.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Column 2: Data Analysis -->
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-search-plus"></i>
-                    <h3>Data Analyse</h3>
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div>
+                        <h3 class="skill-category-title">Traitement & Analyse de Données</h3>
+                        <p class="skill-category-subtitle">Extraction, manipulation et analyse statistique</p>
+                    </div>
                 </div>
-                <ul class="skill-list">
-                    <li>SQL</li>
-                    <li>DAX</li>
-                    <li>Excel avancé</li>
-                    <li>R</li>
-                    <li>SAS</li>
-                    <li>Sphynx</li>
-                </ul>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">SQL</div>
+                            <div class="skill-level">Avancé</div>
+                        </div>
+                        <p class="skill-description">Requêtes complexes avec JOIN, CTE, fonctions de fenêtrage (ROW_NUMBER, LEAD/LAG), agrégations avancées. Optimisation de requêtes et indexation. Utilisé quotidiennement chez METRO pour l'analyse commerciale.</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">DAX</div>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <p class="skill-description">Mesures calculées complexes, context transition, variables, CALCULATE avec filtres multiples. Maîtrise des fonctions Time Intelligence (YTD, MTD, SAMEPERIODLASTYEAR).</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">R</div>
+                            <div class="skill-level">Avancé</div>
+                        </div>
+                        <p class="skill-description">Analyse statistique avec tidyverse (dplyr, tidyr), modélisation (lm, glm), tests statistiques. Manipulation de données avec data.table. Expérience en recherche scientifique à l'INSERM.</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">Excel / VBA</div>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <p class="skill-description">Fonctions avancées (INDEX/MATCH, SUMIFS, tableaux croisés dynamiques), macros VBA pour automatisation, Power Query pour ETL. Création de dashboards dynamiques.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Column 3: Modelisation Data et ETL -->
-            <div class="skill-column">
-                <div class="skill-header">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Modelisation Data et ETL</h3>
+            <div class="skill-category">
+                <div class="skill-category-header">
+                    <div class="skill-category-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div>
+                        <h3 class="skill-category-title">Data Engineering & Automatisation</h3>
+                        <p class="skill-category-subtitle">ETL, modélisation et workflows automatisés</p>
+                    </div>
                 </div>
-                <ul class="skill-list">
-                    <li>Power Query (M)</li>
-                    <li>DAX</li>
-                    <li>Processus ETL</li>
-                </ul>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">Power Query (M Language)</div>
+                            <div class="skill-level">Avancé</div>
+                        </div>
+                        <p class="skill-description">Transformation de données multi-sources, nettoyage, fusion et agrégation. Fonctions personnalisées en M, gestion des erreurs et optimisation des performances. ETL end-to-end pour Power BI.</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">Modélisation de données</div>
+                            <div class="skill-level">Avancé</div>
+                        </div>
+                        <p class="skill-description">Conception de modèles dimensionnels (star schema, snowflake). Normalisation, gestion des relations (1:N, N:N), création de tables de faits et de dimensions. Optimisation pour la performance analytique.</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-item-header">
+                            <div class="skill-name">n8n / Power Automate</div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </div>
+                        <p class="skill-description">Automatisation de workflows data : collecte automatique depuis APIs, transformation et chargement vers bases de données. Intégration multi-outils (Google Sheets, SQL, Power BI).</p>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 </section>
 
-<!-- CONTACT FORM SECTION -->
+<!-- Contact Section -->
 <section id="contact" class="section">
     <div class="container">
-        <h2>Contactez moi!</h2>
-        
-        <!--💡UPDATE: Go to formsubmit.co and replace the email with your own-->
-        <form action="https://formsubmit.co/mbrenock01@gmail.com" method="POST" class="contact-form">
-            <p> Vous souhaitez collaborer avec moi ou vous avez des questions sur mon travail ? N'hésitez pas à me contacter !</p>
-
-            <!-- Form Fields -->
-            <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" name="name" id="name" placeholder="Votre nom" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Votre adresse email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Sujet</label>
-                <input type="text" name="subject" id="subject" placeholder="Sujet" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="6" placeholder="Votre message" required></textarea>
-            </div>
-            
-            <!-- Submit Button -->
-            <button type="submit" class="btn">Envoyer</button>
-
-        </form>
+        <div class="section-header">
+            <div class="section-label">Restons en contact</div>
+            <h2 class="section-title">Contactez-moi</h2>
+            <p class="section-description">Vous avez un projet ou une opportunité ? Parlons-en !</p>
+        </div>
+        <div class="contact-section">
+            <p class="contact-intro">Que ce soit pour une collaboration, une opportunité professionnelle ou simplement échanger sur l'analyse de données, n'hésitez pas à me contacter.</p>
+            <form action="https://formsubmit.co/mbrenock01@gmail.com" method="POST">
+                <div class="form-group">
+                    <label class="form-label">Nom complet</label>
+                    <input type="text" name="name" class="form-input" placeholder="Jean Dupont" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Adresse email</label>
+                    <input type="email" name="email" class="form-input" placeholder="jean.dupont@exemple.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Sujet</label>
+                    <input type="text" name="subject" class="form-input" placeholder="Opportunité de collaboration" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea name="message" class="form-textarea" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">
+                    <i class="fas fa-paper-plane"></i>
+                    Envoyer le message
+                </button>
+            </form>
+        </div>
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
     <div class="container">
-        <!--💡UPDATE: Change the year and your name-->
-        <p>&copy; 2025 Francis M'BRA. tous droits reservés.</p>
+        <div class="footer-content">
+            <div class="footer-text">
+                © 2025 Francis M'BRA • Data Analyst • Tous droits réservés
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/francis-enock-m-bra-78b4a112b/" target="_blank" class="footer-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" target="_blank" class="footer-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" target="_blank" class="footer-link">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
     </div>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script>
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Active nav on scroll
+    window.addEventListener('scroll', () => {
+        let current = '';
+        document.querySelectorAll('section').forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').slice(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.project-card, .timeline-card, .education-card, .skill-category').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+</script>
 
 </body>
 </html>
