@@ -1,61 +1,62 @@
 # Francis M'BRA - Portfolio Data Analyst
 
-Welcome! This repository contains the complete template for a professional, one-page data analysis portfolio website, hosted for free on GitHub Pages.
+Bienvenue sur mon portfolio de Data Analyst ! Ce site centralise mes expériences, compétences, projets et moyens de contact. Il est conçu pour présenter clairement ma capacité à transformer des données complexes en insights actionnables.
 
-## About This Portfolio Template
+## 🔎 À propos
 
-This portfolio is designed to demonstrate my skills in:
-- Data visualization and storytelling
-- Data modeling and analysis
-- Creating interactive, professional dashboards
-- Transforming complex data into actionable insights
+Je suis Francis M’BRA, Data Analyst spécialisé dans l’analyse, la visualisation et l’automatisation des données. Avec plusieurs années d’expérience, je travaille à l’intersection de la Business Intelligence, de la statistique et de l’ingénierie des données.
 
-## 🚀 Projects
+Ce portfolio est conçu pour montrer mes compétences en :
+- Visualisation des données et narration
+- Modélisation et analyse des données
+- Création de tableaux de bord interactifs et professionnels
+- Transformation de données complexes en informations exploitables
 
-This template is set up to showcase your best work. You can easily customize the project cards in the `index.html` file.
+Mon objectif : aider les organisations à prendre des décisions éclairées grâce à des tableaux de bord efficaces, des pipelines de données robustes et des analyses stratégiques.
 
-### Project Title One
-*A brief description of your project, the tools used, and the key insights derived.*
+## 💼 Expériences
 
-### Project Title Two
-*A brief description of your project, the tools used, and the key insights derived.*
+J’ai travaillé sur des projets variés dans des secteurs comme :
+- Reporting décisionnel Retail & Pricing
+- Analyse RH et automatisation
+- Recherche scientifique en santé publique
+- Conception de pipelines ETL
 
-### Project Title Three
-*A brief description of your project, the tools used, and the key insights derived.*
+Chaque expérience m’a permis d’approfondir des compétences clés telles que le requêtage SQL, la modélisation de données et la création de dashboards interactifs.
 
+## 🛠️ Compétences techniques
 
-## 🛠️ Skills
+**Business Intelligence & Visualisation** :
+Power BI, Tableau, RShiny — création de dashboards interactifs, DAX avancé, visualisation claire.
 
-Update the `index.html` file to reflect your personal technical skillset. The template is organized into key categories:
+**Analyse & manipulation de données** :
+SQL (optimisation de requêtes, jointures complexes), R (statistiques & tidyverse), Python (pandas, visualisations).
 
-- **Data Visualization**: Power BI, Tableau, Matplotlib, etc.
-- **Data Analysis**: SQL, Python (Pandas), R, Excel, etc.
-- **Data Modeling**: Power Query, DAX, Star Schema Design, etc.
-- **Tools**: List any other relevant tools like Power BI Service, specific cloud platforms, etc.
+**Automatisation & pipeline** :
+Power Query, n8n, modélisation de données, ETL automatisé.
 
-## 💡 How to Use This Template
+**Outils & pratiques** :
+Git/GitHub, Excel avancé, storytelling avec données.
 
-Creating your own portfolio from this template is a simple, four-step process.
+## 📂 Projets de Portfolio
 
-### 1. Create a New Repository from this Template
-Click the green **"Use this template"** button at the top of this repository page, then select **"Create a new repository"**.
+Mon site présente des projets concrets que j’ai réalisés, incluant par exemple :
 
-### 2. Name Your Repository for GitHub Pages
-This is the most important step. To turn your portfolio into a live website, you **must** name your new repository in the following format:
-`your-username.github.io`
-*(Replace `your-username` with your actual GitHub username.)*
+- 📈 **Tableaux de bord Power BI** pour la performance commerciale
+- 📊 **Analyses statistiques en santé publique** avec RShiny
+- 🧠 **Automatisation de pipelines de données** avec Power Query & n8n
+- 📉 **Analyses exploratoires et storytelling data**
 
-### 3. Customize Your Portfolio
-Open the `index.html` file and begin personalizing it. The file contains helpful `<!--💡UPDATE: ... -->` comments to guide you on where to change:
-- Your name and title
-- Social media links
-- The "About Me" section
-- Your project titles, descriptions, and links
-- Your list of skills
+Chaque projet est documenté avec des visualisations et des liens vers des ressources externes.
 
-### 4. Add Your Files
-- Upload your profile photo and project preview images to the `assets/images/` folder.
-- Upload your CV (e.g., in PDF format) to the `assets/` folder.
-- Create your favicon and add it to the root folder.
+## 📫 Me contacter
+Tu peux me contacter pour des missions, collaborations ou opportunités professionnelles :
 
-Once you commit your changes, your new portfolio website will be live at `https://your-username.github.io` within a few minutes!
+✉️ **Email** : mbraenock01@gmail.com
+🔗 **LinkedIn** : www.linkedin.com/in/francis-enock-m-bra-78b4a112b
+📄 **CV** : téléchargeable directement via le site.
+
+## 🚀 Accéder au site
+
+Accède à l’intégralité de mon portfolio ici : https://eno-devs.github.io/
+
