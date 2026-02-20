@@ -52,9 +52,9 @@ Chaque projet est documenté avec des visualisations et des liens vers des resso
 ## 📫 Me contacter
 Tu peux me contacter pour des missions, collaborations ou opportunités professionnelles :
 
-✉️ **Email** : mbraenock01@gmail.com
-🔗 **LinkedIn** : www.linkedin.com/in/francis-enock-m-bra-78b4a112b
-📄 **CV** : téléchargeable directement via le site.
+- ✉️ **Email** : mbraenock01@gmail.com
+- 🔗 **LinkedIn** : www.linkedin.com/in/francis-enock-m-bra-78b4a112b
+- 📄 **CV** : téléchargeable directement via le site.
 
 ## 🚀 Accéder au site
 
