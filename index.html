@@ -27,39 +27,103 @@
 
         /* ===== LIGHT THEME ===== */
         [data-theme="light"] {
-            --primary: #0284c7; --primary-dark: #0369a1; --primary-light: #0ea5e9;
-            --accent: #0891b2; --dark: #f8fafc; --dark-secondary: #ffffff;
-            --text-primary: #0f172a; --text-secondary: #475569; --text-muted: #64748b;
-            --border: rgba(15, 23, 42, 0.08); --success: #059669; --warning: #d97706;
-            --nav-bg: rgba(248, 250, 252, 0.85); --card-hover-bg: rgba(14, 165, 233, 0.06);
-            --card-bg: rgba(14, 165, 233, 0.03); --tag-bg: rgba(14, 165, 233, 0.06);
-            --tag-border: rgba(14, 165, 233, 0.12); --shadow-primary: rgba(14, 165, 233, 0.15);
-            --project-tag-bg: rgba(255, 255, 255, 0.92); --hero-grid-color: rgba(15, 23, 42, 0.03);
-            --input-bg: rgba(14, 165, 233, 0.04); --input-focus-bg: rgba(14, 165, 233, 0.08);
+            --primary: #0369a1; --primary-dark: #075985; --primary-light: #0284c7;
+            --accent: #0e7490; --dark: #f0f4f8; --dark-secondary: #ffffff;
+            --text-primary: #0f172a; --text-secondary: #334155; --text-muted: #64748b;
+            --border: rgba(14, 165, 233, 0.12); --success: #059669; --warning: #d97706;
+            --nav-bg: rgba(255, 255, 255, 0.92); --card-hover-bg: rgba(14, 165, 233, 0.08);
+            --card-bg: rgba(14, 165, 233, 0.04); --tag-bg: rgba(14, 165, 233, 0.08);
+            --tag-border: rgba(14, 165, 233, 0.18); --shadow-primary: rgba(14, 165, 233, 0.2);
+            --project-tag-bg: rgba(255, 255, 255, 0.95); --hero-grid-color: rgba(14, 165, 233, 0.04);
+            --input-bg: #f8fafc; --input-focus-bg: rgba(14, 165, 233, 0.06);
         }
 
         [data-theme="light"] .hero-bg {
-            background: radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
+            background:
+                radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 60% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 40%);
         }
-        [data-theme="light"] nav { border-bottom-color: rgba(15, 23, 42, 0.06); }
+        [data-theme="light"] nav {
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+            box-shadow: 0 1px 8px rgba(14, 165, 233, 0.06);
+        }
         [data-theme="light"] .timeline-card, [data-theme="light"] .education-card,
         [data-theme="light"] .project-card, [data-theme="light"] .skill-category-new,
         [data-theme="light"] .func-card, [data-theme="light"] .contact-section,
         [data-theme="light"] .profile-card {
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+            box-shadow: 0 1px 3px rgba(14, 165, 233, 0.06), 0 6px 20px rgba(14, 165, 233, 0.05);
+            border-color: rgba(14, 165, 233, 0.1);
+        }
+        [data-theme="light"] .timeline-card:hover, [data-theme="light"] .education-card:hover,
+        [data-theme="light"] .project-card:hover, [data-theme="light"] .skill-category-new:hover,
+        [data-theme="light"] .func-card:hover {
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.1), 0 12px 32px rgba(14, 165, 233, 0.08);
         }
         [data-theme="light"] .form-input, [data-theme="light"] .form-textarea {
-            border-color: rgba(15, 23, 42, 0.12);
+            border-color: rgba(14, 165, 233, 0.15);
+            background: #f8fafc;
         }
-        [data-theme="light"] footer { border-top-color: rgba(15, 23, 42, 0.06); }
-        [data-theme="light"] .profile-status { background: var(--dark-secondary); }
-        [data-theme="light"] .timeline-marker { background: var(--dark-secondary); }
+        [data-theme="light"] .form-input:focus, [data-theme="light"] .form-textarea:focus {
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.12);
+        }
+        [data-theme="light"] footer {
+            background: linear-gradient(180deg, #f0f4f8, #e8eef4);
+            border-top: 1px solid rgba(14, 165, 233, 0.08);
+        }
+        [data-theme="light"] .profile-status { background: var(--dark-secondary); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        [data-theme="light"] .timeline-marker { background: var(--dark-secondary); box-shadow: 0 0 0 6px rgba(14, 165, 233, 0.08); }
         [data-theme="light"] .stat-number { color: var(--primary); }
+        [data-theme="light"] .hero-label { background: rgba(14, 165, 233, 0.08); border-color: rgba(14, 165, 233, 0.2); }
+        [data-theme="light"] .section-label { color: var(--primary); }
+        [data-theme="light"] .hero h1 .gradient-text {
+            background: linear-gradient(135deg, #0369a1, #0e7490, #0284c7);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        [data-theme="light"] .btn-secondary {
+            background: #ffffff; border-color: rgba(14, 165, 233, 0.2);
+            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.06);
+        }
+        [data-theme="light"] .btn-secondary:hover { border-color: var(--primary); background: rgba(14, 165, 233, 0.04); }
+        [data-theme="light"] .tool-item {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.03), rgba(6, 182, 212, 0.02));
+            border-color: rgba(14, 165, 233, 0.1);
+        }
+        [data-theme="light"] .tool-item:hover {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.07), rgba(6, 182, 212, 0.04));
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.06);
+        }
+        [data-theme="light"] .degree-item {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.04), rgba(6, 182, 212, 0.03));
+            border-color: rgba(14, 165, 233, 0.1);
+        }
+        [data-theme="light"] .cert-item { background: rgba(14, 165, 233, 0.03); }
+        [data-theme="light"] .cert-item:hover { background: rgba(14, 165, 233, 0.06); }
+        [data-theme="light"] .social-link { background: rgba(14, 165, 233, 0.06); border-color: rgba(14, 165, 233, 0.12); }
+        [data-theme="light"] .tech-tag { background: rgba(14, 165, 233, 0.07); border-color: rgba(14, 165, 233, 0.15); color: var(--primary); }
+        [data-theme="light"] .timeline-period { background: rgba(14, 165, 233, 0.07); border-color: rgba(14, 165, 233, 0.15); color: var(--primary); }
+        [data-theme="light"] .section-title { color: #0c2340; }
+        [data-theme="light"] .contact-section { background: linear-gradient(135deg, #ffffff, #f8fafc); }
+        [data-theme="light"] .nav-toggle-btn, [data-theme="light"] .lang-switch {
+            background: rgba(14, 165, 233, 0.05); border-color: rgba(14, 165, 233, 0.12);
+        }
+        [data-theme="light"] .skills-tab:not(.active) { background: #ffffff; border-color: rgba(14, 165, 233, 0.12); }
+        [data-theme="light"] .project-image { background: linear-gradient(135deg, rgba(14, 165, 233, 0.06), rgba(6, 182, 212, 0.06)); }
+        [data-theme="light"] .func-list-item {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.03), rgba(6, 182, 212, 0.02));
+            border-color: rgba(14, 165, 233, 0.08);
+        }
+        [data-theme="light"] .func-list-item:hover {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.07), rgba(6, 182, 212, 0.04));
+            box-shadow: 0 2px 8px rgba(14, 165, 233, 0.06);
+        }
+        [data-theme="light"] .func-header { border-bottom-color: rgba(14, 165, 233, 0.08); }
+        [data-theme="light"] .func-list-bullet { background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(6, 182, 212, 0.08)); color: var(--primary); }
 
         body, nav, .hero-bg, .timeline-card, .education-card, .project-card,
         .skill-category-new, .func-card, .contact-section, .profile-card,
-        .form-input, .form-textarea, footer, .tool-item, .degree-item, .cert-item {
+        .form-input, .form-textarea, footer, .tool-item, .degree-item, .cert-item,
+        .func-list-item, .func-list-bullet {
             transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
         }
 
@@ -236,16 +300,46 @@
         .tool-level.advanced { background: rgba(16, 185, 129, 0.12); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.25); }
         .tool-level.intermediate { background: rgba(245, 158, 11, 0.12); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.25); }
         .tool-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.65; }
-        .functional-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
-        .func-card { background: var(--dark-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .functional-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .func-card {
+            background: var(--dark-secondary); border: 1px solid var(--border);
+            border-radius: 20px; padding: 2.5rem; transition: all 0.3s ease;
+            position: relative; overflow: hidden;
+        }
         .func-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: opacity 0.3s ease; }
-        .func-card:hover { border-color: rgba(14, 165, 233, 0.3); transform: translateY(-4px); }
+        .func-card:hover { border-color: rgba(14, 165, 233, 0.3); transform: translateY(-5px); }
         .func-card:hover::before { opacity: 1; }
-        .func-card-icon { width: 48px; height: 48px; background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(6, 182, 212, 0.15)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary-light); font-size: 1.25rem; margin-bottom: 1.25rem; }
-        .func-card h4 { font-family: 'Sora', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 1.25rem; color: var(--text-primary); }
+        .func-header {
+            display: flex; align-items: start; gap: 1.5rem;
+            margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+        }
+        .func-card-icon {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 14px; display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 1.5rem; flex-shrink: 0;
+        }
+        .func-header-text h4 {
+            font-family: 'Sora', sans-serif; font-size: 1.4rem; font-weight: 600;
+            margin-bottom: 0.4rem; color: var(--text-primary);
+        }
+        .func-header-subtitle { color: var(--text-muted); font-size: 0.9rem; }
         .func-list { list-style: none; }
-        .func-list li { position: relative; padding-left: 1.25rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 0.6rem; }
-        .func-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 6px; height: 6px; background: var(--primary); border-radius: 50%; }
+        .func-list-item {
+            padding: 1rem 1.25rem; background: var(--card-bg);
+            border: 1px solid var(--border); border-radius: 10px;
+            margin-bottom: 0.75rem; transition: all 0.3s ease;
+            display: flex; align-items: center; gap: 1rem;
+            color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;
+        }
+        .func-list-item:last-child { margin-bottom: 0; }
+        .func-list-item:hover { background: var(--card-hover-bg); border-color: rgba(14, 165, 233, 0.2); transform: translateX(4px); }
+        .func-list-bullet {
+            width: 32px; height: 32px; min-width: 32px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(6, 182, 212, 0.12));
+            border-radius: 8px; display: flex; align-items: center; justify-content: center;
+            color: var(--primary-light); font-size: 0.8rem;
+        }
 
         /* Contact */
         .contact-section { background: var(--dark-secondary); border: 1px solid var(--border); border-radius: 24px; padding: 3.5rem; max-width: 700px; margin: 0 auto; }
@@ -267,7 +361,7 @@
         .footer-link:hover { background: var(--primary); color: white; transform: translateY(-3px); }
 
         /* Responsive */
-        @media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr; } .profile-card { position: relative; top: 0; } .functional-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr; } .profile-card { position: relative; top: 0; } .functional-grid { grid-template-columns: 1fr; } }
         @media (max-width: 768px) {
             .hero { min-height: 90vh; }
             nav .container { flex-wrap: wrap; gap: 0.75rem; }
@@ -278,7 +372,6 @@
             .projects-grid { grid-template-columns: 1fr; }
             .contact-section { padding: 2rem 1.5rem; }
             .footer-content { flex-direction: column; text-align: center; }
-            .functional-grid { grid-template-columns: 1fr; }
             .tool-header { flex-wrap: wrap; }
             .skill-category-new { padding: 1.5rem; }
         }
@@ -300,10 +393,10 @@
         </div>
         <div class="nav-controls">
             <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLang('fr')">FR</button>
-                <button class="lang-btn" onclick="setLang('en')">EN</button>
+                <button class="lang-btn active" id="langFr">FR</button>
+                <button class="lang-btn" id="langEn">EN</button>
             </div>
-            <button class="nav-toggle-btn" onclick="toggleTheme()" id="themeToggle" title="Changer de thème">
+            <button class="nav-toggle-btn" id="themeToggle" title="Changer de thème">
                 <i class="fas fa-sun"></i>
             </button>
         </div>
@@ -405,8 +498,8 @@
     <div class="container">
         <div class="section-header"><div class="section-label" data-i18n="skills_label">Expertise</div><h2 class="section-title" data-i18n="skills_title">Compétences</h2><p class="section-description" data-i18n="skills_desc">Un aperçu complet de mes compétences techniques et fonctionnelles</p></div>
         <div class="skills-tabs">
-            <div class="skills-tab active" onclick="switchTab('tech')"><i class="fas fa-code"></i> <span data-i18n="tab_tech">Compétences techniques</span></div>
-            <div class="skills-tab" onclick="switchTab('func')"><i class="fas fa-briefcase"></i> <span data-i18n="tab_func">Compétences fonctionnelles</span></div>
+            <div class="skills-tab active" id="tabTech"><i class="fas fa-code"></i> <span data-i18n="tab_tech">Compétences techniques</span></div>
+            <div class="skills-tab" id="tabFunc"><i class="fas fa-briefcase"></i> <span data-i18n="tab_func">Compétences fonctionnelles</span></div>
         </div>
         <div id="panel-tech" class="skills-panel active">
             <div class="skill-category-new"><div class="skill-cat-header"><div class="skill-cat-icon"><i class="fas fa-chart-line"></i></div><div><div class="skill-cat-title">Data Visualisation</div><div class="skill-cat-subtitle" data-i18n="cat1_sub">Transformation de données en insights visuels</div></div></div>
@@ -436,9 +529,54 @@
         </div>
         <div id="panel-func" class="skills-panel">
             <div class="functional-grid">
-                <div class="func-card"><div class="func-card-icon"><i class="fas fa-bullseye"></i></div><h4 data-i18n="func1_title">Business & Métier</h4><ul class="func-list"><li data-i18n="func1_1">Analyse et traduction des besoins métier</li><li data-i18n="func1_2">Définition d'indicateurs clés (KPI)</li><li data-i18n="func1_3">Veille sectorielle et benchmarking</li><li data-i18n="func1_4">Intégration de l'IA dans la stratégie data</li><li data-i18n="func1_5">Conseil et recommandation stratégique</li></ul></div>
-                <div class="func-card"><div class="func-card-icon"><i class="fas fa-tasks"></i></div><h4 data-i18n="func2_title">Gestion de Projet Data</h4><ul class="func-list"><li data-i18n="func2_1">Cycle de vie complet de la donnée</li><li data-i18n="func2_2">Industrialisation de dashboards</li><li data-i18n="func2_3">Automatisation des reportings</li><li data-i18n="func2_4">Documentation technique</li><li data-i18n="func2_5">Gestion des parties prenantes</li></ul></div>
-                <div class="func-card"><div class="func-card-icon"><i class="fas fa-comments"></i></div><h4 data-i18n="func3_title">Communication & Impact</h4><ul class="func-list"><li data-i18n="func3_1">Vulgarisation des résultats d'analyse</li><li data-i18n="func3_2">Data Storytelling</li><li data-i18n="func3_3">Reporting clair et synthétique</li><li data-i18n="func3_4">Formation et accompagnement utilisateurs</li><li data-i18n="func3_5">Présentation aux décideurs</li></ul></div>
+                <div class="func-card">
+                    <div class="func-header">
+                        <div class="func-card-icon"><i class="fas fa-bullseye"></i></div>
+                        <div class="func-header-text">
+                            <h4 data-i18n="func1_title">Business & Métier</h4>
+                            <div class="func-header-subtitle" data-i18n="func1_sub">Compréhension des enjeux et conseil stratégique</div>
+                        </div>
+                    </div>
+                    <div class="func-list">
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-search"></i></div><span data-i18n="func1_1">Analyse et traduction des besoins métier</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-bullseye"></i></div><span data-i18n="func1_2">Définition d'indicateurs clés (KPI)</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-binoculars"></i></div><span data-i18n="func1_3">Veille sectorielle et benchmarking</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-brain"></i></div><span data-i18n="func1_4">Intégration de l'IA dans la stratégie data</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-lightbulb"></i></div><span data-i18n="func1_5">Conseil et recommandation stratégique</span></div>
+                    </div>
+                </div>
+                <div class="func-card">
+                    <div class="func-header">
+                        <div class="func-card-icon"><i class="fas fa-tasks"></i></div>
+                        <div class="func-header-text">
+                            <h4 data-i18n="func2_title">Gestion de Projet Data</h4>
+                            <div class="func-header-subtitle" data-i18n="func2_sub">Pilotage et industrialisation des processus</div>
+                        </div>
+                    </div>
+                    <div class="func-list">
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-sync-alt"></i></div><span data-i18n="func2_1">Cycle de vie complet de la donnée</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-industry"></i></div><span data-i18n="func2_2">Industrialisation de dashboards</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-magic"></i></div><span data-i18n="func2_3">Automatisation des reportings</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-file-alt"></i></div><span data-i18n="func2_4">Documentation technique</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-users"></i></div><span data-i18n="func2_5">Gestion des parties prenantes</span></div>
+                    </div>
+                </div>
+                <div class="func-card">
+                    <div class="func-header">
+                        <div class="func-card-icon"><i class="fas fa-comments"></i></div>
+                        <div class="func-header-text">
+                            <h4 data-i18n="func3_title">Communication & Impact</h4>
+                            <div class="func-header-subtitle" data-i18n="func3_sub">Restitution et accompagnement des équipes</div>
+                        </div>
+                    </div>
+                    <div class="func-list">
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-chalkboard-teacher"></i></div><span data-i18n="func3_1">Vulgarisation des résultats d'analyse</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-book-open"></i></div><span data-i18n="func3_2">Data Storytelling</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-clipboard-check"></i></div><span data-i18n="func3_3">Reporting clair et synthétique</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-hands-helping"></i></div><span data-i18n="func3_4">Formation et accompagnement utilisateurs</span></div>
+                        <div class="func-list-item"><div class="func-list-bullet"><i class="fas fa-chart-line"></i></div><span data-i18n="func3_5">Présentation aux décideurs</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -473,143 +611,174 @@
 </footer>
 
 <script>
-// THEME TOGGLE
-function toggleTheme() {
-    const html = document.documentElement;
-    const btn = document.getElementById('themeToggle');
-    const isDark = html.getAttribute('data-theme') === 'dark';
-    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    btn.innerHTML = isDark ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-}
-(function() {
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-        document.documentElement.setAttribute('data-theme', saved);
-        const btn = document.getElementById('themeToggle');
-        if (btn) btn.innerHTML = saved === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+document.addEventListener('DOMContentLoaded', function() {
+    // THEME TOGGLE
+    var themeBtn = document.getElementById('themeToggle');
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        themeBtn.innerHTML = theme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
     }
-})();
+    var savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+    themeBtn.addEventListener('click', function() {
+        var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        var next = isDark ? 'light' : 'dark';
+        applyTheme(next);
+        localStorage.setItem('theme', next);
+    });
 
-// LANGUAGE SWITCHER
-const translations = { en: {
-    nav_about:"About",nav_exp:"Experience",nav_edu:"Education",nav_projects:"Projects",nav_skills:"Skills",
-    hero_label:"Available for new projects",hero_hello:"Hi, I'm",
-    hero_desc:"Data Analyst specialized in transforming complex data into strategic insights. Expert in Power BI, SQL and R with proven experience in retail, HR and scientific research.",
-    hero_cta1:"Contact me",hero_cta2:"Download CV",stat_exp:"Years of experience",stat_proj:"Completed projects",stat_edu:"Education",
-    about_label:"Introduction",about_title:"About me",available:"Available",
-    about_p1:"I am a data analyst with a Master's degree in Data Analysis and Demography, passionate about transforming complex data into clear, strategic and actionable indicators using Power BI, SQL, R, and Python. I work across all stages of the data lifecycle, from collection to decision-making reporting.",
-    about_p2:"My career has allowed me to work in diverse environments, from commercial analysis and pricing at METRO, to HR reporting and operational performance optimization at Domino's Pizza, as well as scientific research at INSERM on public health issues.",
-    about_p3:"Today, I am also strengthening my profile with data process automation skills (n8n, Power Automate), with a clear objective: making data speak to effectively drive your strategy.",
-    exp_label:"Career path",exp_title:"Experience",exp_desc:"My journey in data analysis across different industries",
-    exp1_title:"Data Consultant",exp1_period:"May 2025 - Oct 2025",
-    exp1_t1:"Understanding business needs to translate them into clear and detailed reports",
-    exp1_t2:"Data acquisition and preparation with quality checks and consistency validation",
-    exp1_t3:"Building KPIs with DAX and developing interactive reports and dashboards on Power BI",
-    exp2_title:"Management & Analysis Officer",exp2_period:"Aug 2024 - Dec 2024",
-    exp2_t1:"Design and automation of HR dashboards on Power BI for tracking turnover, absenteeism and performance",
-    exp2_t2:"Optimization of reporting processes with Power Query and DAX",
-    exp2_t3:"Predictive workforce analysis and recruitment needs modeling",
-    exp3_title:"Data Consultant & Trainer",exp3_period:"Aug 2023 - Mar 2024",
-    exp3_t1:"Automation via Excel and Power BI",exp3_t2:"Training on advanced Excel functions and Power BI onboarding",exp3_t3:"Strategic consulting",
-    exp4_title:"Pricing Analyst",exp4_period:"Dec 2022 - May 2023",
-    exp4_t1:"Commercial performance and pricing analysis by client segmentation",
-    exp4_t2:"Development of strategic KPIs for sales management",
-    exp4_t3:"Creation of interactive dashboards with Power BI Desktop",
-    exp5_title:"Statistical Research Officer",exp5_period:"Feb 2021 - Jul 2021",
-    exp5_t1:"Implementation and statistical analysis of an epidemiological study on Covid-19",
-    exp5_t2:"Statistical modeling with R (regression, hypothesis testing, ANOVA)",
-    exp5_t3:"Complex data visualization with RShiny and ggplot2",
-    edu_label:"Academic background",edu_title:"Education & Certifications",edu_degrees:"Degrees",edu_certs:"Certifications",
-    deg1_title:"Master 2 Consultants & Socio-Economic Research Officers, Data Analyst track",
-    deg1_desc:"Specialization in quantitative data analysis, statistical modeling, querying and data visualization. Research projects on data analysis and complex data visualization via RShiny and Power BI.",
-    deg2_title:"Master 2: Demographic Studies and Research",
-    deg2_desc:"Specialization in quantitative data analysis, statistical modeling, demography and social sciences. Research projects on cohort analysis and data visualization.",
-    tag_data_analyst:"Data Analyst",tag_adv_stats:"Advanced Statistics",tag_demo:"Demography",
-    cert1_title:"English Language Proficiency Diploma",cert_done:"Certified",cert_progress:"In progress",
-    proj_title:"Data Projects",proj_desc:"A selection of my data analysis and visualization projects",
-    p1_title:"Commercial Data Analysis",p1_desc:"Power BI dashboard for tracking commercial performance and pricing analysis. Includes dynamic KPIs and predictive analytics.",
-    p2_title:"Health Data Analysis",p2_desc:"Statistical analysis using R on public health data. RShiny visualizations to facilitate interpretation of results.",
-    p3_title:"E-commerce Data Analysis",p3_desc:"Business intelligence dashboard built on Power BI, designed to provide a clear and interactive view of commercial performance.",
-    see_report:"View report",
-    skills_label:"Expertise",skills_title:"Skills",skills_desc:"A comprehensive overview of my technical and functional skills",
-    tab_tech:"Technical skills",tab_func:"Functional skills",
-    cat1_sub:"Transforming data into visual insights",cat2_title:"Data Processing & Analysis",cat2_sub:"Extraction, manipulation and statistical analysis",
-    cat3_title:"Data Engineering & Automation",cat3_sub:"ETL, modeling and automated workflows",
-    sk_pbi:"Advanced DAX (Time Intelligence, Calculate, Filter Context), star/snowflake modeling, Row-Level Security, performance optimization. Used at METRO and Domino's for decision-making reporting.",
-    sk_tab:"Dynamic visualizations, table calculations, parameters and actions. Data storytelling best practices.",
-    sk_rshiny:"Interactive web applications for statistical data visualization. Using ggplot2, plotly and DT for scientific dashboards (INSERM).",
-    sk_sql:"Complex queries with JOIN, CTE, window functions (ROW_NUMBER, LEAD/LAG), advanced aggregations. Query optimization and indexing.",
-    sk_dax:"Complex calculated measures, context transition, variables, CALCULATE with multiple filters. Time Intelligence functions (YTD, MTD, SAMEPERIODLASTYEAR).",
-    sk_r:"Tidyverse (dplyr, tidyr), modeling (lm, glm), statistical tests, data.table. Scientific research experience at INSERM.",
-    sk_py:"Pandas, NumPy, exploratory and statistical analyses. Data processing automation.",
-    sk_excel:"INDEX/MATCH, SUMIFS, pivot tables, VBA macros for automation, Power Query for ETL. Dynamic dashboards.",
-    sk_pq:"Multi-source transformation, cleaning, merging and aggregation. Custom M functions, error handling. End-to-end ETL for Power BI.",
-    sk_model_name:"Data Modeling",sk_model:"Dimensional models (star schema, snowflake), normalization, relationships (1:N, N:N), fact and dimension tables.",
-    sk_auto:"Data workflow automation: collection from APIs, transformation and loading. Multi-tool integration (Google Sheets, SQL, Power BI).",
-    sk_git:"Version control, collaboration, data project documentation.",
-    lvl_adv:"Advanced",lvl_inter:"Intermediate",
-    func1_title:"Business & Domain",func1_1:"Business needs analysis and translation",func1_2:"KPI definition",func1_3:"Industry watch and benchmarking",func1_4:"AI integration in data strategy",func1_5:"Strategic consulting and recommendations",
-    func2_title:"Data Project Management",func2_1:"Full data lifecycle management",func2_2:"Dashboard industrialization",func2_3:"Reporting automation",func2_4:"Technical documentation",func2_5:"Stakeholder management",
-    func3_title:"Communication & Impact",func3_1:"Simplifying analysis results",func3_2:"Data Storytelling",func3_3:"Clear and concise reporting",func3_4:"User training and support",func3_5:"Presenting to decision-makers",
-    contact_label:"Let's connect",contact_title:"Contact me",contact_desc:"Have a project or an opportunity? Let's talk!",
-    contact_intro:"Whether for a collaboration, a professional opportunity or simply to discuss data analysis, feel free to reach out.",
-    form_name:"Full name",form_name_ph:"John Doe",form_email:"Email address",form_email_ph:"john.doe@example.com",
-    form_subject:"Subject",form_subject_ph:"Collaboration opportunity",form_msg_ph:"Describe your project or request...",form_send:"Send message",
-    footer:"© 2026 Francis M'BRA • Data Analyst • All rights reserved"
-}};
+    // LANGUAGE
+    var translations = { en: {
+        nav_about:"About",nav_exp:"Experience",nav_edu:"Education",nav_projects:"Projects",nav_skills:"Skills",
+        hero_label:"Available for new projects",hero_hello:"Hi, I'm",
+        hero_desc:"Data Analyst specialized in transforming complex data into strategic insights. Expert in Power BI, SQL and R with proven experience in retail, HR and scientific research.",
+        hero_cta1:"Contact me",hero_cta2:"Download CV",stat_exp:"Years of experience",stat_proj:"Completed projects",stat_edu:"Education",
+        about_label:"Introduction",about_title:"About me",available:"Available",
+        about_p1:"I am a data analyst with a Master's degree in Data Analysis and Demography, passionate about transforming complex data into clear, strategic and actionable indicators using Power BI, SQL, R, and Python. I work across all stages of the data lifecycle, from collection to decision-making reporting.",
+        about_p2:"My career has allowed me to work in diverse environments, from commercial analysis and pricing at METRO, to HR reporting and operational performance optimization at Domino's Pizza, as well as scientific research at INSERM on public health issues.",
+        about_p3:"Today, I am also strengthening my profile with data process automation skills (n8n, Power Automate), with a clear objective: making data speak to effectively drive your strategy.",
+        exp_label:"Career path",exp_title:"Experience",exp_desc:"My journey in data analysis across different industries",
+        exp1_title:"Data Consultant",exp1_period:"May 2025 - Oct 2025",
+        exp1_t1:"Understanding business needs to translate them into clear and detailed reports",
+        exp1_t2:"Data acquisition and preparation with quality checks and consistency validation",
+        exp1_t3:"Building KPIs with DAX and developing interactive reports and dashboards on Power BI",
+        exp2_title:"Management & Analysis Officer",exp2_period:"Aug 2024 - Dec 2024",
+        exp2_t1:"Design and automation of HR dashboards on Power BI for tracking turnover, absenteeism and performance",
+        exp2_t2:"Optimization of reporting processes with Power Query and DAX",
+        exp2_t3:"Predictive workforce analysis and recruitment needs modeling",
+        exp3_title:"Data Consultant & Trainer",exp3_period:"Aug 2023 - Mar 2024",
+        exp3_t1:"Automation via Excel and Power BI",exp3_t2:"Training on advanced Excel functions and Power BI onboarding",exp3_t3:"Strategic consulting",
+        exp4_title:"Pricing Analyst",exp4_period:"Dec 2022 - May 2023",
+        exp4_t1:"Commercial performance and pricing analysis by client segmentation",
+        exp4_t2:"Development of strategic KPIs for sales management",
+        exp4_t3:"Creation of interactive dashboards with Power BI Desktop",
+        exp5_title:"Statistical Research Officer",exp5_period:"Feb 2021 - Jul 2021",
+        exp5_t1:"Implementation and statistical analysis of an epidemiological study on Covid-19",
+        exp5_t2:"Statistical modeling with R (regression, hypothesis testing, ANOVA)",
+        exp5_t3:"Complex data visualization with RShiny and ggplot2",
+        edu_label:"Academic background",edu_title:"Education & Certifications",edu_degrees:"Degrees",edu_certs:"Certifications",
+        deg1_title:"Master 2 Consultants & Socio-Economic Research Officers, Data Analyst track",
+        deg1_desc:"Specialization in quantitative data analysis, statistical modeling, querying and data visualization. Research projects on data analysis and complex data visualization via RShiny and Power BI.",
+        deg2_title:"Master 2: Demographic Studies and Research",
+        deg2_desc:"Specialization in quantitative data analysis, statistical modeling, demography and social sciences. Research projects on cohort analysis and data visualization.",
+        tag_data_analyst:"Data Analyst",tag_adv_stats:"Advanced Statistics",tag_demo:"Demography",
+        cert1_title:"English Language Proficiency Diploma",cert_done:"Certified",cert_progress:"In progress",
+        proj_title:"Data Projects",proj_desc:"A selection of my data analysis and visualization projects",
+        p1_title:"Commercial Data Analysis",p1_desc:"Power BI dashboard for tracking commercial performance and pricing analysis. Includes dynamic KPIs and predictive analytics.",
+        p2_title:"Health Data Analysis",p2_desc:"Statistical analysis using R on public health data. RShiny visualizations to facilitate interpretation of results.",
+        p3_title:"E-commerce Data Analysis",p3_desc:"Business intelligence dashboard built on Power BI, designed to provide a clear and interactive view of commercial performance.",
+        see_report:"View report",
+        skills_label:"Expertise",skills_title:"Skills",skills_desc:"A comprehensive overview of my technical and functional skills",
+        tab_tech:"Technical skills",tab_func:"Functional skills",
+        cat1_sub:"Transforming data into visual insights",cat2_title:"Data Processing & Analysis",cat2_sub:"Extraction, manipulation and statistical analysis",
+        cat3_title:"Data Engineering & Automation",cat3_sub:"ETL, modeling and automated workflows",
+        sk_pbi:"Advanced DAX (Time Intelligence, Calculate, Filter Context), star/snowflake modeling, Row-Level Security, performance optimization. Used at METRO and Domino's for decision-making reporting.",
+        sk_tab:"Dynamic visualizations, table calculations, parameters and actions. Data storytelling best practices.",
+        sk_rshiny:"Interactive web applications for statistical data visualization. Using ggplot2, plotly and DT for scientific dashboards (INSERM).",
+        sk_sql:"Complex queries with JOIN, CTE, window functions (ROW_NUMBER, LEAD/LAG), advanced aggregations. Query optimization and indexing.",
+        sk_dax:"Complex calculated measures, context transition, variables, CALCULATE with multiple filters. Time Intelligence functions (YTD, MTD, SAMEPERIODLASTYEAR).",
+        sk_r:"Tidyverse (dplyr, tidyr), modeling (lm, glm), statistical tests, data.table. Scientific research experience at INSERM.",
+        sk_py:"Pandas, NumPy, exploratory and statistical analyses. Data processing automation.",
+        sk_excel:"INDEX/MATCH, SUMIFS, pivot tables, VBA macros for automation, Power Query for ETL. Dynamic dashboards.",
+        sk_pq:"Multi-source transformation, cleaning, merging and aggregation. Custom M functions, error handling. End-to-end ETL for Power BI.",
+        sk_model_name:"Data Modeling",sk_model:"Dimensional models (star schema, snowflake), normalization, relationships (1:N, N:N), fact and dimension tables.",
+        sk_auto:"Data workflow automation: collection from APIs, transformation and loading. Multi-tool integration (Google Sheets, SQL, Power BI).",
+        sk_git:"Version control, collaboration, data project documentation.",
+        lvl_adv:"Advanced",lvl_inter:"Intermediate",
+        func1_title:"Business & Domain",func1_sub:"Understanding business challenges and strategic consulting",func1_1:"Business needs analysis and translation",func1_2:"KPI definition",func1_3:"Industry watch and benchmarking",func1_4:"AI integration in data strategy",func1_5:"Strategic consulting and recommendations",
+        func2_title:"Data Project Management",func2_sub:"Steering and industrializing data processes",func2_1:"Full data lifecycle management",func2_2:"Dashboard industrialization",func2_3:"Reporting automation",func2_4:"Technical documentation",func2_5:"Stakeholder management",
+        func3_title:"Communication & Impact",func3_sub:"Delivering insights and supporting teams",func3_1:"Simplifying analysis results",func3_2:"Data Storytelling",func3_3:"Clear and concise reporting",func3_4:"User training and support",func3_5:"Presenting to decision-makers",
+        contact_label:"Let's connect",contact_title:"Contact me",contact_desc:"Have a project or an opportunity? Let's talk!",
+        contact_intro:"Whether for a collaboration, a professional opportunity or simply to discuss data analysis, feel free to reach out.",
+        form_name:"Full name",form_name_ph:"John Doe",form_email:"Email address",form_email_ph:"john.doe@example.com",
+        form_subject:"Subject",form_subject_ph:"Collaboration opportunity",form_msg_ph:"Describe your project or request...",form_send:"Send message",
+        footer:"\u00a9 2026 Francis M'BRA \u2022 Data Analyst \u2022 All rights reserved"
+    }};
 
-const frTexts = {};
-let currentLang = 'fr';
-function cacheFrench() {
-    document.querySelectorAll('[data-i18n]').forEach(el => { frTexts[el.getAttribute('data-i18n')] = el.textContent; });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { frTexts[el.getAttribute('data-i18n-placeholder')] = el.getAttribute('placeholder'); });
-}
-function setLang(lang) {
-    if (lang === currentLang) return;
-    currentLang = lang;
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
-    document.documentElement.lang = lang;
-    const dict = lang === 'en' ? translations.en : frTexts;
-    document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (dict[k]) el.textContent = dict[k]; });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const k = el.getAttribute('data-i18n-placeholder'); if (dict[k]) el.setAttribute('placeholder', dict[k]); });
-    localStorage.setItem('lang', lang);
-}
-document.addEventListener('DOMContentLoaded', () => {
+    var frTexts = {};
+    var currentLang = 'fr';
+
+    function cacheFrench() {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            frTexts[el.getAttribute('data-i18n')] = el.textContent;
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+            frTexts[el.getAttribute('data-i18n-placeholder')] = el.getAttribute('placeholder');
+        });
+    }
+
+    function setLang(lang) {
+        if (lang === currentLang) return;
+        currentLang = lang;
+        document.getElementById('langFr').classList.toggle('active', lang === 'fr');
+        document.getElementById('langEn').classList.toggle('active', lang === 'en');
+        document.documentElement.lang = lang;
+        var dict = lang === 'en' ? translations.en : frTexts;
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var k = el.getAttribute('data-i18n');
+            if (dict[k]) el.textContent = dict[k];
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+            var k = el.getAttribute('data-i18n-placeholder');
+            if (dict[k]) el.setAttribute('placeholder', dict[k]);
+        });
+        localStorage.setItem('lang', lang);
+    }
+
+    document.getElementById('langFr').addEventListener('click', function() { setLang('fr'); });
+    document.getElementById('langEn').addEventListener('click', function() { setLang('en'); });
     cacheFrench();
-    const sl = localStorage.getItem('lang');
+    var sl = localStorage.getItem('lang');
     if (sl && sl !== 'fr') setLang(sl);
-});
 
-// SKILLS TABS
-function switchTab(tab) {
-    document.querySelectorAll('.skills-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.skills-panel').forEach(p => p.classList.remove('active'));
-    document.getElementById('panel-' + tab).classList.add('active');
-    const tabs = document.querySelectorAll('.skills-tab');
-    if (tab === 'tech') tabs[0].classList.add('active'); else tabs[1].classList.add('active');
-}
+    // SKILLS TABS
+    function switchTab(tab) {
+        document.querySelectorAll('.skills-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.skills-panel').forEach(function(p) { p.classList.remove('active'); });
+        document.getElementById('panel-' + tab).classList.add('active');
+        document.getElementById(tab === 'tech' ? 'tabTech' : 'tabFunc').classList.add('active');
+    }
+    document.getElementById('tabTech').addEventListener('click', function() { switchTab('tech'); });
+    document.getElementById('tabFunc').addEventListener('click', function() { switchTab('func'); });
 
-// SMOOTH SCROLL
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
-});
+    // SMOOTH SCROLL
+    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            var t = document.querySelector(this.getAttribute('href'));
+            if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
 
-// ACTIVE NAV
-window.addEventListener('scroll', () => {
-    let c = '';
-    document.querySelectorAll('section').forEach(s => { if (scrollY >= s.offsetTop - 150) c = s.getAttribute('id'); });
-    document.querySelectorAll('nav a').forEach(l => { l.classList.remove('active'); if (l.getAttribute('href').slice(1) === c) l.classList.add('active'); });
-});
+    // ACTIVE NAV
+    window.addEventListener('scroll', function() {
+        var c = '';
+        document.querySelectorAll('section').forEach(function(s) {
+            if (window.scrollY >= s.offsetTop - 150) c = s.getAttribute('id');
+        });
+        document.querySelectorAll('nav a').forEach(function(l) {
+            l.classList.remove('active');
+            if (l.getAttribute('href').slice(1) === c) l.classList.add('active');
+        });
+    });
 
-// INTERSECTION OBSERVER
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
-}, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-document.querySelectorAll('.project-card, .timeline-card, .education-card, .skill-category-new, .func-card').forEach(el => {
-    el.style.opacity = '0'; el.style.transform = 'translateY(30px)'; el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; observer.observe(el);
+    // INTERSECTION OBSERVER
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+            if (e.isIntersecting) {
+                e.target.style.opacity = '1';
+                e.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+    document.querySelectorAll('.project-card, .timeline-card, .education-card, .skill-category-new, .func-card').forEach(function(el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
 });
 </script>
+
 </body>
 </html>
