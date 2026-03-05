@@ -45,7 +45,7 @@
             padding: 0 2rem;
         }
 
-        /* Hero Section - Premium Design */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -195,7 +195,7 @@
             color: var(--text-muted);
         }
 
-        /* Navigation - Professional */
+        /* Navigation */
         nav {
             position: sticky;
             top: 0;
@@ -779,102 +779,272 @@
             background: rgba(14, 165, 233, 0.2);
         }
 
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            gap: 2rem;
+        /* ========== NEW SKILLS SECTION ========== */
+        .skills-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
         }
 
-        .skill-category {
+        .skills-tab {
+            padding: 0.75rem 1.5rem;
+            background: rgba(14, 165, 233, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skills-tab:hover,
+        .skills-tab.active {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+        }
+
+        .skills-tab i {
+            font-size: 1rem;
+        }
+
+        .skills-panel {
+            display: none;
+        }
+
+        .skills-panel.active {
+            display: block;
+            animation: fadeSlideIn 0.4s ease;
+        }
+
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .skill-category-new {
             background: var(--dark-secondary);
             border: 1px solid var(--border);
             border-radius: 20px;
             padding: 2.5rem;
+            margin-bottom: 2rem;
             transition: all 0.3s ease;
         }
 
-        .skill-category:hover {
-            border-color: var(--primary);
+        .skill-category-new:hover {
+            border-color: rgba(14, 165, 233, 0.3);
         }
 
-        .skill-category-header {
+        .skill-cat-header {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
+            gap: 1.25rem;
+            margin-bottom: 2rem;
         }
 
-        .skill-category-icon {
-            width: 70px;
-            height: 70px;
+        .skill-cat-icon {
+            width: 56px;
+            height: 56px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 16px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 2rem;
-        }
-
-        .skill-category-title {
-            font-family: 'Sora', sans-serif;
             font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .skill-cat-title {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.35rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
         }
 
-        .skill-category-subtitle {
+        .skill-cat-subtitle {
             color: var(--text-muted);
-            font-size: 0.9375rem;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
         }
 
-        .skill-items {
-            display: grid;
-            gap: 1.5rem;
+        .tool-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .skill-item {
-            padding: 1.5rem;
+        .tool-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1.25rem 1.5rem;
             background: rgba(14, 165, 233, 0.03);
             border: 1px solid var(--border);
             border-radius: 12px;
             transition: all 0.3s ease;
         }
 
-        .skill-item:hover {
-            background: rgba(14, 165, 233, 0.08);
-            border-color: var(--primary);
+        .tool-item:hover {
+            background: rgba(14, 165, 233, 0.07);
+            border-color: rgba(14, 165, 233, 0.25);
+            transform: translateX(4px);
         }
 
-        .skill-item-header {
+        .tool-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(14, 165, 233, 0.1);
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            border-radius: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 0.75rem;
+            justify-content: center;
+            color: var(--primary-light);
+            font-size: 1.1rem;
+            flex-shrink: 0;
         }
 
-        .skill-name {
-            font-weight: 600;
-            font-size: 1.0625rem;
+        .tool-content {
+            flex: 1;
+            min-width: 0;
         }
 
-        .skill-level {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            padding: 0.35rem 0.9rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
+        .tool-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+        }
+
+        .tool-level {
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            flex-shrink: 0;
         }
 
-        .skill-description {
+        .tool-level.expert {
+            background: rgba(14, 165, 233, 0.15);
+            color: var(--primary-light);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+        }
+
+        .tool-level.advanced {
+            background: rgba(16, 185, 129, 0.12);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .tool-level.intermediate {
+            background: rgba(245, 158, 11, 0.12);
+            color: var(--warning);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+
+        .tool-desc {
             color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: 0.9375rem;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .functional-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .func-card {
+            background: var(--dark-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .func-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .func-card:hover {
+            border-color: rgba(14, 165, 233, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .func-card:hover::before {
+            opacity: 1;
+        }
+
+        .func-card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(6, 182, 212, 0.15));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-light);
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .func-card h4 {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .func-list {
+            list-style: none;
+        }
+
+        .func-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.6rem;
+        }
+
+        .func-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
         }
 
         /* Contact Form */
@@ -1006,6 +1176,10 @@
                 position: relative;
                 top: 0;
             }
+
+            .functional-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1043,6 +1217,18 @@
             .footer-content {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            .functional-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tool-header {
+                flex-wrap: wrap;
+            }
+
+            .skill-category-new {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -1174,7 +1360,7 @@
                     </div>
                     <ul class="timeline-tasks">
                         <li>Compréhension des besoins métier afin de les traduire en rapport claires et détaillés</li>
-                        <li>Acquisition et préparation des données en effectuant des vérifications de qualité, et en m’assurant de la cohérence</li>
+                        <li>Acquisition et préparation des données en effectuant des vérifications de qualité, et en m'assurant de la cohérence</li>
                         <li>Construction des KPI sous DAX et développement de rapports et tableaux de bord interactifs sur power bi</li>
                     </ul>
                     <div class="tech-tags">
@@ -1196,18 +1382,18 @@
                         <div class="timeline-period">Août 2024 - Dec 2024</div>
                     </div>
                     <ul class="timeline-tasks">
-                 <li>Conception et automatisation de dashboards RH sur Power BI pour le suivi du turnover, absentéisme et performance</li>
+                        <li>Conception et automatisation de dashboards RH sur Power BI pour le suivi du turnover, absentéisme et performance</li>
                         <li>Optimisation des processus de reporting avec Power Query et DAX</li>
                         <li>Analyse prédictive des effectifs et modélisation des besoins en recrutement</li>
                     </ul>
                     <div class="tech-tags">
-                       <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Power BI</span>
                         <span class="tech-tag">DAX</span>
                         <span class="tech-tag">Excel VBA</span>
                         <span class="tech-tag">Power Query</span>
                     </div>
                 </div>
-            </div>  
+            </div>
             <div class="timeline-item">
                 <div class="timeline-marker"></div>
                 <div class="timeline-card">
@@ -1219,14 +1405,14 @@
                         <div class="timeline-period">Août 2023 - Mars 2024</div>
                     </div>
                     <ul class="timeline-tasks">
-                        <li>Automatisations via Excel et Power bi </li>
-                        <li>Formations sur les fonctions avancées d’Excel et la prise en main de power bi</li>
+                        <li>Automatisations via Excel et Power bi</li>
+                        <li>Formations sur les fonctions avancées d'Excel et la prise en main de power bi</li>
                         <li>Conseils en stratégie</li>
                     </ul>
                     <div class="tech-tags">
-                        <span class="tech-tag">power bi</span>
-                        <span class="tech-tag">Power query</span>
-                        <span class="tech-tag">Power pivot</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">Power Query</span>
+                        <span class="tech-tag">Power Pivot</span>
                         <span class="tech-tag">Macros Excel</span>
                     </div>
                 </div>
@@ -1254,8 +1440,8 @@
                     </div>
                 </div>
             </div>
-    <div class="timeline-item">
-        <div class="timeline-marker"></div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
                 <div class="timeline-card">
                     <div class="timeline-header">
                         <div>
@@ -1276,6 +1462,8 @@
                         <span class="tech-tag">ggplot2</span>
                     </div>
                 </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -1429,126 +1617,227 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </section>
 
-<!-- Skills Section -->
+<!-- ========== NEW SKILLS SECTION ========== -->
 <section id="skills" class="section">
     <div class="container">
         <div class="section-header">
             <div class="section-label">Expertise</div>
-            <h2 class="section-title">Compétences Techniques</h2>
-            <p class="section-description">Un aperçu détaillé de mes compétences techniques en analyse de données</p>
+            <h2 class="section-title">Compétences</h2>
+            <p class="section-description">Un aperçu complet de mes compétences techniques et fonctionnelles</p>
         </div>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <div class="skill-category-header">
-                    <div class="skill-category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
+
+        <!-- Tabs Navigation -->
+        <div class="skills-tabs">
+            <div class="skills-tab active" onclick="switchTab('tech')">
+                <i class="fas fa-code"></i> Compétences techniques
+            </div>
+            <div class="skills-tab" onclick="switchTab('func')">
+                <i class="fas fa-briefcase"></i> Compétences fonctionnelles
+            </div>
+        </div>
+
+        <!-- PANEL 1 : Compétences Techniques -->
+        <div id="panel-tech" class="skills-panel active">
+
+            <!-- Data Visualisation -->
+            <div class="skill-category-new">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon"><i class="fas fa-chart-line"></i></div>
                     <div>
-                        <h3 class="skill-category-title">Business Intelligence & Visualisation</h3>
-                        <p class="skill-category-subtitle">Transformation de données en insights visuels</p>
+                        <div class="skill-cat-title">Data Visualisation</div>
+                        <div class="skill-cat-subtitle">Transformation de données en insights visuels</div>
                     </div>
                 </div>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">Power BI</div>
-                            <div class="skill-level">Expert</div>
+                <div class="tool-list">
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-chart-bar"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">Power BI</span>
+                                <span class="tool-level expert">Expert</span>
+                            </div>
+                            <p class="tool-desc">DAX avancé (Time Intelligence, Calculate, Filter Context), modélisation en étoile/flocon, Row-Level Security, optimisation des performances. Utilisé chez METRO et Domino's pour le reporting décisionnel.</p>
                         </div>
-                        <p class="skill-description">Conception de tableaux de bord interactifs avec DAX avancé (Time Intelligence, Calculate, Filter Context). Modélisation en étoile/flocon, optimisation des performances, Row-Level Security. Utilisé chez METRO et Domino's pour le reporting décisionnel.</p>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">Tableau Desktop</div>
-                            <div class="skill-level">Intermédiaire</div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-chart-area"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">Tableau Desktop</span>
+                                <span class="tool-level intermediate">Intermédiaire</span>
+                            </div>
+                            <p class="tool-desc">Visualisations dynamiques, calculs de table, paramètres et actions. Best practices en data storytelling.</p>
                         </div>
-                        <p class="skill-description">Création de visualisations dynamiques, calculs de table, paramètres et actions. Maîtrise des best practices en data storytelling.</p>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">RShiny</div>
-                            <div class="skill-level">Intermédiaire</div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-desktop"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">RShiny</span>
+                                <span class="tool-level intermediate">Intermédiaire</span>
+                            </div>
+                            <p class="tool-desc">Applications web interactives pour la visualisation de données statistiques. Utilisation de ggplot2, plotly et DT pour des dashboards scientifiques (INSERM).</p>
                         </div>
-                        <p class="skill-description">Développement d'applications web interactives pour la visualisation de données statistiques à l'INSERM. Utilisation de ggplot2, plotly et DT pour des dashboards scientifiques.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="skill-category">
-                <div class="skill-category-header">
-                    <div class="skill-category-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
+            <!-- Traitement & Analyse -->
+            <div class="skill-category-new">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon"><i class="fas fa-database"></i></div>
                     <div>
-                        <h3 class="skill-category-title">Traitement & Analyse de Données</h3>
-                        <p class="skill-category-subtitle">Extraction, manipulation et analyse statistique</p>
+                        <div class="skill-cat-title">Traitement & Analyse de Données</div>
+                        <div class="skill-cat-subtitle">Extraction, manipulation et analyse statistique</div>
                     </div>
                 </div>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">SQL</div>
-                            <div class="skill-level">Avancé</div>
+                <div class="tool-list">
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-server"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">SQL</span>
+                                <span class="tool-level advanced">Avancé</span>
+                            </div>
+                            <p class="tool-desc">Requêtes complexes avec JOIN, CTE, fonctions de fenêtrage (ROW_NUMBER, LEAD/LAG), agrégations avancées. Optimisation de requêtes et indexation.</p>
                         </div>
-                        <p class="skill-description">Requêtes complexes avec JOIN, CTE, fonctions de fenêtrage (ROW_NUMBER, LEAD/LAG), agrégations avancées. Optimisation de requêtes et indexation. Utilisé quotidiennement chez METRO pour l'analyse commerciale.</p>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">DAX</div>
-                            <div class="skill-level">Expert</div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-calculator"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">DAX</span>
+                                <span class="tool-level expert">Expert</span>
+                            </div>
+                            <p class="tool-desc">Mesures calculées complexes, context transition, variables, CALCULATE avec filtres multiples. Fonctions Time Intelligence (YTD, MTD, SAMEPERIODLASTYEAR).</p>
                         </div>
-                        <p class="skill-description">Mesures calculées complexes, context transition, variables, CALCULATE avec filtres multiples. Maîtrise des fonctions Time Intelligence (YTD, MTD, SAMEPERIODLASTYEAR).</p>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">R</div>
-                            <div class="skill-level">Avancé</div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">R</span>
+                                <span class="tool-level advanced">Avancé</span>
+                            </div>
+                            <p class="tool-desc">Tidyverse (dplyr, tidyr), modélisation (lm, glm), tests statistiques, data.table. Expérience en recherche scientifique à l'INSERM.</p>
                         </div>
-                        <p class="skill-description">Analyse statistique avec tidyverse (dplyr, tidyr), modélisation (lm, glm), tests statistiques. Manipulation de données avec data.table. Expérience en recherche scientifique à l'INSERM.</p>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">Excel / VBA</div>
-                            <div class="skill-level">Expert</div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fab fa-python"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">Python</span>
+                                <span class="tool-level intermediate">Intermédiaire</span>
+                            </div>
+                            <p class="tool-desc">Pandas, NumPy, analyses exploratoires et statistiques. Automatisation de traitements data.</p>
                         </div>
-                        <p class="skill-description">Fonctions avancées (INDEX/MATCH, SUMIFS, tableaux croisés dynamiques), macros VBA pour automatisation, Power Query pour ETL. Création de dashboards dynamiques.</p>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-table"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">Excel / VBA</span>
+                                <span class="tool-level expert">Expert</span>
+                            </div>
+                            <p class="tool-desc">INDEX/MATCH, SUMIFS, TCD, macros VBA pour automatisation, Power Query pour ETL. Dashboards dynamiques.</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="skill-category">
-                <div class="skill-category-header">
-                    <div class="skill-category-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
+            <!-- Data Engineering & Automatisation -->
+            <div class="skill-category-new">
+                <div class="skill-cat-header">
+                    <div class="skill-cat-icon"><i class="fas fa-project-diagram"></i></div>
                     <div>
-                        <h3 class="skill-category-title">Data Engineering & Automatisation</h3>
-                        <p class="skill-category-subtitle">ETL, modélisation et workflows automatisés</p>
+                        <div class="skill-cat-title">Data Engineering & Automatisation</div>
+                        <div class="skill-cat-subtitle">ETL, modélisation et workflows automatisés</div>
                     </div>
                 </div>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">Power Query (M Language)</div>
-                            <div class="skill-level">Avancé</div>
+                <div class="tool-list">
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">Power Query (M Language)</span>
+                                <span class="tool-level advanced">Avancé</span>
+                            </div>
+                            <p class="tool-desc">Transformation multi-sources, nettoyage, fusion et agrégation. Fonctions personnalisées en M, gestion des erreurs. ETL end-to-end pour Power BI.</p>
                         </div>
-                        <p class="skill-description">Transformation de données multi-sources, nettoyage, fusion et agrégation. Fonctions personnalisées en M, gestion des erreurs et optimisation des performances. ETL end-to-end pour Power BI.</p>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">Modélisation de données</div>
-                            <div class="skill-level">Avancé</div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-sitemap"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">Modélisation de données</span>
+                                <span class="tool-level advanced">Avancé</span>
+                            </div>
+                            <p class="tool-desc">Modèles dimensionnels (star schema, snowflake), normalisation, relations (1:N, N:N), tables de faits et dimensions.</p>
                         </div>
-                        <p class="skill-description">Conception de modèles dimensionnels (star schema, snowflake). Normalisation, gestion des relations (1:N, N:N), création de tables de faits et de dimensions. Optimisation pour la performance analytique.</p>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-item-header">
-                            <div class="skill-name">n8n / Power Automate</div>
-                            <div class="skill-level">Intermédiaire</div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fas fa-robot"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">n8n / Power Automate</span>
+                                <span class="tool-level intermediate">Intermédiaire</span>
+                            </div>
+                            <p class="tool-desc">Automatisation de workflows data : collecte depuis APIs, transformation et chargement. Intégration multi-outils (Google Sheets, SQL, Power BI).</p>
                         </div>
-                        <p class="skill-description">Automatisation de workflows data : collecte automatique depuis APIs, transformation et chargement vers bases de données. Intégration multi-outils (Google Sheets, SQL, Power BI).</p>
                     </div>
+                    <div class="tool-item">
+                        <div class="tool-icon"><i class="fab fa-github"></i></div>
+                        <div class="tool-content">
+                            <div class="tool-header">
+                                <span class="tool-name">GitHub / Git</span>
+                                <span class="tool-level intermediate">Intermédiaire</span>
+                            </div>
+                            <p class="tool-desc">Gestion de versions, collaboration, documentation de projets data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL 2 : Compétences Fonctionnelles -->
+        <div id="panel-func" class="skills-panel">
+            <div class="functional-grid">
+                <div class="func-card">
+                    <div class="func-card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h4>Business & Métier</h4>
+                    <ul class="func-list">
+                        <li>Analyse et traduction des besoins métier</li>
+                        <li>Définition d'indicateurs clés (KPI)</li>
+                        <li>Veille sectorielle et benchmarking</li>
+                        <li>Intégration de l'IA dans la stratégie data</li>
+                        <li>Conseil et recommandation stratégique</li>
+                    </ul>
+                </div>
+                <div class="func-card">
+                    <div class="func-card-icon"><i class="fas fa-tasks"></i></div>
+                    <h4>Gestion de Projet Data</h4>
+                    <ul class="func-list">
+                        <li>Cycle de vie complet de la donnée</li>
+                        <li>Industrialisation de dashboards</li>
+                        <li>Automatisation des reportings</li>
+                        <li>Documentation technique</li>
+                        <li>Gestion des parties prenantes</li>
+                    </ul>
+                </div>
+                <div class="func-card">
+                    <div class="func-card-icon"><i class="fas fa-comments"></i></div>
+                    <h4>Communication & Impact</h4>
+                    <ul class="func-list">
+                        <li>Vulgarisation des résultats d'analyse</li>
+                        <li>Data Storytelling</li>
+                        <li>Reporting clair et synthétique</li>
+                        <li>Formation et accompagnement utilisateurs</li>
+                        <li>Présentation aux décideurs</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1611,6 +1900,16 @@
 </footer>
 
 <script>
+    // Tab switching for skills
+    function switchTab(tab) {
+        document.querySelectorAll('.skills-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.skills-panel').forEach(p => p.classList.remove('active'));
+        document.getElementById('panel-' + tab).classList.add('active');
+        const tabs = document.querySelectorAll('.skills-tab');
+        if (tab === 'tech') tabs[0].classList.add('active');
+        else tabs[1].classList.add('active');
+    }
+
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -1655,7 +1954,7 @@
         });
     }, observerOptions);
 
-    document.querySelectorAll('.project-card, .timeline-card, .education-card, .skill-category').forEach(el => {
+    document.querySelectorAll('.project-card, .timeline-card, .education-card, .skill-category-new, .func-card').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
